@@ -1,0 +1,16 @@
+<!doctype html>
+<html><head><title>FitBuddy Result</title><link rel="stylesheet" href="/static/style.css"></head>
+<body><div class="container wide"><a href="/">← Back Home</a>
+{% if error %}<p class="error">{{ error }}</p>{% else %}
+<h1>Hello, {{ user.name }}!</h1>
+<p><b>User ID:</b> {{ user.user_id }} | <b>Goal:</b> {{ user.goal }} | <b>Intensity:</b> {{ user.intensity }}</p>
+{% if updated %}<p class="success">Plan updated successfully.</p>{% endif %}
+<h2>7-Day Plan</h2><pre>{{ plan }}</pre>
+<h2>Nutrition / Recovery Tip</h2><p>{{ tip }}</p>
+<h2>Update Plan with Feedback</h2>
+<form action="/submit-feedback" method="post">
+<input type="hidden" name="user_id" value="{{ user.user_id }}">
+<textarea name="feedback" rows="5" placeholder="Example: Add more recovery time" required></textarea>
+<button>Update Plan</button>
+</form>{% endif %}
+</div></body></html>

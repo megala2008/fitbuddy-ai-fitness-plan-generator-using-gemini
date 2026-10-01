@@ -1,0 +1,8 @@
+<!doctype html>
+<html><head><title>All Users</title><link rel="stylesheet" href="/static/style.css"></head>
+<body><div class="container wide"><a href="/">← Back Home</a><h1>All Users</h1>
+<table><tr><th>ID</th><th>Name</th><th>Age</th><th>Goal</th><th>Intensity</th></tr>
+{% for user in users %}<tr><td>{{ user.user_id }}</td><td>{{ user.name }}</td><td>{{ user.age }}</td><td>{{ user.goal }}</td><td>{{ user.intensity }}</td></tr>{% endfor %}
+</table>
+{% for user in users %}<h2>{{ user.name }} — {{ user.user_id }}</h2><pre>{{ user.original_plan }}</pre>{% if user.updated_plan %}<h3>Updated Plan</h3><pre>{{ user.updated_plan }}</pre>{% endif %}{% endfor %}
+</div></body></html>

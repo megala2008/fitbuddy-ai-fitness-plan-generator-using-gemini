@@ -1,0 +1,18 @@
+<!doctype html>
+<html><head><title>FitBuddy</title><link rel="stylesheet" href="/static/style.css"></head>
+<body><div class="container">
+<h1>FitBuddy</h1><p>AI Fitness Plan Generator</p>
+<form action="/generate-workout" method="post">
+<label>Name</label><input name="name" required>
+<label>User ID</label><input name="user_id" required>
+<label>Age</label><input type="number" name="age" min="13" max="100" required>
+<label>Weight</label><input name="weight" placeholder="Example: 60 kg" required>
+<label>Fitness Goal</label>
+<select name="goal"><option>General wellness</option><option>Weight management</option><option>Muscle strength</option><option>Flexibility</option><option>General fitness</option></select>
+<label>Workout Intensity</label>
+<select name="intensity"><option>Low</option><option>Medium</option><option>High</option></select>
+<button>Generate Plan</button>
+</form>
+<p><a href="/view-all-users">View All Users</a> | <a href="/docs">API Docs</a></p>
+<small>Educational demo only. AI output is general wellness information.</small>
+</div></body></html>
